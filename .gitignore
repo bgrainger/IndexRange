@@ -1,0 +1,25 @@
+# ignore output folders
+BenchmarkDotNet.Artifacts/
+bin/
+build/
+obj/
+packages/
+
+# ignore user-specific options/cache files
+project.lock.json
+_ReSharper.*
+TestResult.xml
+Thumbs.db
+*.csproj.user
+*.DotSettings.user
+.idea
+*.ncrunchproject
+*.ncrunchproject.user
+*.ncrunchsolution
+*.ncrunchsolution.user
+*.[Rr]e[Ss]harper.user
+*.sln.cache
+*.suo
+.vs/
+*.xproj.user
+.vscode/
