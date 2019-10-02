@@ -30,6 +30,6 @@ var slice = array.AsSpan()[1..^1];
 
 The other fix is to define the necessary method in your source code. Copy the following code into your project:
 
-<script src="https://gist.github.com/bgrainger/fb2c18659c2cdfce494c82a8c4803360.js"></script>
+https://gist.github.com/bgrainger/fb2c18659c2cdfce494c82a8c4803360
 
 That type is not in this NuGet package so that the C# compiler doesn't warn that `The predefined type 'RuntimeHelpers' is defined in multiple assemblies`.
