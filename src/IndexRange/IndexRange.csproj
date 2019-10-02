@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>Enable</Nullable>
   </PropertyGroup>
 
 </Project>

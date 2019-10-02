@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace System
@@ -30,7 +29,7 @@ namespace System
         {
             if (value < 0)
             {
-                ThrowHelper.ThrowValueArgumentOutOfRange_NeedNonNegNumException();
+                throw new ArgumentOutOfRangeException(nameof(value), "value must be non-negative");
             }
 
             if (fromEnd)
@@ -58,7 +57,7 @@ namespace System
         {
             if (value < 0)
             {
-                ThrowHelper.ThrowValueArgumentOutOfRange_NeedNonNegNumException();
+                throw new ArgumentOutOfRangeException(nameof(value), "value must be non-negative");
             }
 
             return new Index(value);
@@ -71,7 +70,7 @@ namespace System
         {
             if (value < 0)
             {
-                ThrowHelper.ThrowValueArgumentOutOfRange_NeedNonNegNumException();
+                throw new ArgumentOutOfRangeException(nameof(value), "value must be non-negative");
             }
 
             return new Index(~value);
@@ -133,18 +132,9 @@ namespace System
         public override string ToString()
         {
             if (IsFromEnd)
-                return ToStringFromEnd();
+                return "^" + ((uint)Value).ToString();
 
             return ((uint)Value).ToString();
-        }
-
-        private string ToStringFromEnd()
-        {
-            Span<char> span = stackalloc char[11]; // 1 for ^ and 10 for longest possible uint value
-            bool formatted = ((uint)Value).TryFormat(span.Slice(1), out int charsWritten);
-            Debug.Assert(formatted);
-            span[0] = '^';
-            return new string(span.Slice(0, charsWritten + 1));
         }
     }
 }

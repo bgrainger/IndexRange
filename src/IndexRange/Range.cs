@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace System
@@ -47,37 +46,13 @@ namespace System
         /// <summary>Returns the hash code for this instance.</summary>
         public override int GetHashCode()
         {
-            return HashCode.Combine(Start.GetHashCode(), End.GetHashCode());
+            return Start.GetHashCode() * 31 + End.GetHashCode();
         }
 
         /// <summary>Converts the value of the current Range object to its equivalent string representation.</summary>
         public override string ToString()
         {
-            Span<char> span = stackalloc char[2 + (2 * 11)]; // 2 for "..", then for each index 1 for '^' and 10 for longest possible uint
-            int charsWritten;
-            int pos = 0;
-
-            if (Start.IsFromEnd)
-            {
-                span[0] = '^';
-                pos = 1;
-            }
-            bool formatted = ((uint)Start.Value).TryFormat(span.Slice(pos), out charsWritten);
-            Debug.Assert(formatted);
-            pos += charsWritten;
-
-            span[pos++] = '.';
-            span[pos++] = '.';
-
-            if (End.IsFromEnd)
-            {
-                span[pos++] = '^';
-            }
-            formatted = ((uint)End.Value).TryFormat(span.Slice(pos), out charsWritten);
-            Debug.Assert(formatted);
-            pos += charsWritten;
-
-            return new string(span.Slice(0, pos));
+            return Start + ".." + End;
         }
 
         /// <summary>Create a Range object starting from start index to the end of the collection.</summary>
@@ -115,7 +90,7 @@ namespace System
 
             if ((uint)end > (uint)length || (uint)start > (uint)end)
             {
-                ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument.length);
+                throw new ArgumentOutOfRangeException(nameof(length));
             }
 
             return (start, end - start);
