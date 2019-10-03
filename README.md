@@ -16,13 +16,6 @@ The package is available [on NuGet](https://www.nuget.org/packages/IndexRange). 
 dotnet add package IndexRange --version 1.0.0-beta3
 ```
 
-Note: this package should _only_ be installed in projects targeting .NET Framework (e.g., `net48`) or `netstandard2.0`. If you're multi-targeting, manually edit
-your csproj XML to install the package conditionally, e.g.,
-
-```xml
-<PackageReference Include="IndexRange" Version="1.0.0-beta3" Condition=" '$(TargetFramework)' == 'netstandard2.0' " />
-```
-
 ## Build Status
 
 [![Build Status](https://dev.azure.com/bgrainger/Public/_apis/build/status/bgrainger.IndexRange?branchName=master)](https://dev.azure.com/bgrainger/Public/_build/latest?definitionId=3&branchName=master)

@@ -4,6 +4,7 @@
 
 using System.Runtime.CompilerServices;
 
+#if NETSTANDARD2_0
 namespace System
 {
     /// <summary>Represent a type can be used to index a collection either from the start or the end.</summary>
@@ -138,3 +139,6 @@ namespace System
         }
     }
 }
+#else
+[assembly:TypeForwardedToAttribute(typeof(System.Index))]  
+#endif
