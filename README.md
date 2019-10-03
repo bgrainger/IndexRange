@@ -1,5 +1,7 @@
 # IndexRange
 
+![Package Icon](icon.png)
+
 This repository provides implementations (copied [from corefx](https://github.com/dotnet/corefx/tree/d152d19f0be3dcea1a32f452e9d9940e990574d7/src/Common/src/CoreLib/System))
 of `System.Index` and `System.Range` for `netstandard2.0`.
 

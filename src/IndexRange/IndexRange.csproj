@@ -17,6 +17,8 @@
     <PackageProjectUrl>https://github.com/bgrainger/IndexRange</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/bgrainger/IndexRange/blob/master/VersionHistory.md</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIconUrl>https://raw.githubusercontent.com/bgrainger/IndexRange/master/icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bgrainger/IndexRange.git</RepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
@@ -29,6 +31,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
