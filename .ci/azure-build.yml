@@ -13,11 +13,17 @@ steps:
   displayName: 'Build'
   inputs:
     command: 'build'
-    configuration: 'Release'
+    arguments: '-c Release'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Run tests'
+  displayName: 'Tests'
+  condition: eq(variables['Agent.OS'], 'Linux')
   inputs:
     command: 'test'
-    configuration: 'Release'
-    publishTestResults: true
+    arguments: '-c Release -f netcoreapp3.0'
+
+- task: VSTest@2
+  displayName: 'Tests'
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
+  inputs:
+    testAssemblyVer2: 'tests/**/*Tests.dll'
