@@ -1,7 +1,5 @@
 # IndexRange
 
-![Package Icon](icon.png)
-
 This repository provides implementations (copied [from corefx](https://github.com/dotnet/corefx/tree/d152d19f0be3dcea1a32f452e9d9940e990574d7/src/Common/src/CoreLib/System))
 of `System.Index` and `System.Range` for `netstandard2.0`.
 
@@ -15,14 +13,14 @@ This lets you use the new C# 8.0 [index and range features](https://docs.microso
 The package is available [on NuGet](https://www.nuget.org/packages/IndexRange). To install, run:
 
 ```
-dotnet add package IndexRange --version 1.0.0-beta2
+dotnet add package IndexRange --version 1.0.0-beta3
 ```
 
 Note: this package should _only_ be installed in projects targeting .NET Framework (e.g., `net48`) or `netstandard2.0`. If you're multi-targeting, manually edit
 your csproj XML to install the package conditionally, e.g.,
 
 ```xml
-<PackageReference Include="IndexRange" Version="1.0.0-beta2" Condition=" '$(TargetFramework)' == 'netstandard2.0' " />
+<PackageReference Include="IndexRange" Version="1.0.0-beta3" Condition=" '$(TargetFramework)' == 'netstandard2.0' " />
 ```
 
 ## Build Status
