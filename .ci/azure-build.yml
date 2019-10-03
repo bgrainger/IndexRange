@@ -2,6 +2,12 @@ steps:
 - task: UseDotNet@2
   displayName: 'Install .NET Core'
   inputs:
+    version: '2.1.13'
+    packageType: 'runtime'
+
+- task: UseDotNet@2
+  displayName: 'Install .NET Core'
+  inputs:
     version: '3.0.100'
 
 - task: DotNetCoreCLI@2
@@ -16,14 +22,20 @@ steps:
     arguments: '-c Release'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Tests'
-  condition: eq(variables['Agent.OS'], 'Linux')
+  displayName: 'Test netcoreapp2.0'
+  inputs:
+    command: 'test'
+    arguments: '-c Release -f netcoreapp2.0'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Test netcoreapp3.0 (Baseline)'
   inputs:
     command: 'test'
     arguments: '-c Release -f netcoreapp3.0'
 
-- task: VSTest@2
-  displayName: 'Tests'
+- task: DotNetCoreCLI@2
+  displayName: 'Test net48'
   condition: eq(variables['Agent.OS'], 'Windows_NT')
   inputs:
-    testAssemblyVer2: 'tests/**/*Tests.dll'
+    command: 'test'
+    arguments: '-c Release -f net48'
