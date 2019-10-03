@@ -3,10 +3,12 @@
   <PropertyGroup>
     <VersionPrefix>1.0.0</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <LangVersion>8.0</LangVersion>
     <Nullable>Enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0.</Description>
     <Copyright>Copyright 2019 Bradley Grainger</Copyright>
