@@ -1,12 +1,12 @@
 steps:
 - task: UseDotNet@2
-  displayName: 'Install .NET Core'
+  displayName: 'Install .NET Core 2.0 Runtime'
   inputs:
     version: '2.1.13'
     packageType: 'runtime'
 
 - task: UseDotNet@2
-  displayName: 'Install .NET Core'
+  displayName: 'Install .NET Core 3.0 SDK'
   inputs:
     version: '3.0.100'
 
@@ -26,12 +26,14 @@ steps:
   inputs:
     command: 'test'
     arguments: '-c Release -f netcoreapp2.0'
+    testRunTitle: 'netcoreapp2.0'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test netcoreapp3.0 (Baseline)'
   inputs:
     command: 'test'
     arguments: '-c Release -f netcoreapp3.0'
+    testRunTitle: 'netcoreapp3.0'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test net48'
@@ -39,3 +41,4 @@ steps:
   inputs:
     command: 'test'
     arguments: '-c Release -f net48'
+    testRunTitle: 'net48'
