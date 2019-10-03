@@ -1,0 +1,23 @@
+steps:
+- task: UseDotNet@2
+  displayName: 'Install .NET Core'
+  inputs:
+    version: '3.0.100'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore packages'
+  inputs:
+    command: 'restore'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    configuration: 'Release'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run tests'
+  inputs:
+    command: 'test'
+    configuration: 'Release'
+    publishTestResults: true

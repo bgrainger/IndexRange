@@ -1,0 +1,12 @@
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - template: '.ci/azure-build.yml'
+
+- job: Windows
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - template: '.ci/azure-build.yml'
