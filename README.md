@@ -8,6 +8,8 @@ This lets you use the new C# 8.0 [index and range features](https://docs.microso
 
 ## Installing
 
+[![NuGet Pre Release](https://img.shields.io/nuget/v/IndexRange.svg)](https://www.nuget.org/packages/IndexRange/)
+
 The package is available [on NuGet](https://www.nuget.org/packages/IndexRange). To install, run:
 
 ```
@@ -20,6 +22,10 @@ your csproj XML to install the package conditionally, e.g.,
 ```xml
 <PackageReference Include="IndexRange" Version="1.0.0-beta1" Condition=" '$(TargetFramework)' == 'netstandard2.0' " />
 ```
+
+## Build Status
+
+[![Build Status](https://dev.azure.com/bgrainger/Public/_apis/build/status/bgrainger.IndexRange?branchName=master)](https://dev.azure.com/bgrainger/Public/_build/latest?definitionId=3&branchName=master)
 
 ## Using Range with Arrays
 
