@@ -13,7 +13,7 @@ This lets you use the new C# 8.0 [index and range features](https://docs.microso
 The package is available [on NuGet](https://www.nuget.org/packages/IndexRange). To install, run:
 
 ```
-dotnet add package IndexRange --version 1.0.0-beta3
+dotnet add package IndexRange --version 1.0.0-beta4
 ```
 
 ## Build Status
