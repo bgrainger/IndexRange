@@ -4,7 +4,9 @@
 
 using System.Runtime.CompilerServices;
 
-#if NETSTANDARD2_0
+#if NETSTANDARD2_1
+[assembly: TypeForwardedTo(typeof(System.Range))]
+#else
 namespace System
 {
     /// <summary>Represent a range has start and end indexes.</summary>
@@ -98,6 +100,4 @@ namespace System
         }
     }
 }
-#else
-[assembly:TypeForwardedToAttribute(typeof(System.Range))]  
 #endif
