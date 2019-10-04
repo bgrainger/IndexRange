@@ -36,6 +36,14 @@ steps:
     testRunTitle: 'netcoreapp3.0'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Test net47'
+  condition: eq(variables['Agent.OS'], 'Windows_NT')
+  inputs:
+    command: 'test'
+    arguments: '-c Release -f net47'
+    testRunTitle: 'net47'
+
+- task: DotNetCoreCLI@2
   displayName: 'Test net48'
   condition: eq(variables['Agent.OS'], 'Windows_NT')
   inputs:
