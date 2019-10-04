@@ -10,7 +10,7 @@
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
-    <Description>Implementations of System.Index and System.Range for netstandard2.0.</Description>
+    <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
     <Copyright>Copyright 2019 Bradley Grainger</Copyright>
     <Authors>Bradley Grainger</Authors>
     <PackageTags>Index;System.Index;Range;System.Range;C#8</PackageTags>

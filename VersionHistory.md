@@ -1,5 +1,9 @@
 # Version History
 
+### 1.0.0-beta5
+
+* Add `net45` and `net471` packages for broader .NET Framework support.
+
 ### 1.0.0-beta4
 
 * Create a `netstandard2.1` package that type-forwards to `System.Index` and `System.Range`.
