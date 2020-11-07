@@ -27,7 +27,9 @@ namespace System
         /// <remarks>
         /// If the Index constructed from the end, index value 1 means pointing at the last element and index value 0 means pointing at beyond last element.
         /// </remarks>
+        #if !NET35
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        #endif
         public Index(int value, bool fromEnd = false)
         {
             if (value < 0)
@@ -55,7 +57,9 @@ namespace System
 
         /// <summary>Create an Index from the start at the position indicated by the value.</summary>
         /// <param name="value">The index value from the start.</param>
+        #if !NET35 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        #endif
         public static Index FromStart(int value)
         {
             if (value < 0)
@@ -68,7 +72,9 @@ namespace System
 
         /// <summary>Create an Index from the end at the position indicated by the value.</summary>
         /// <param name="value">The index value from the end.</param>
+        #if !NET35 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        #endif
         public static Index FromEnd(int value)
         {
             if (value < 0)
@@ -102,7 +108,9 @@ namespace System
         /// It is expected Index will be used with collections which always have non negative length/count. If the returned offset is negative and
         /// then used to index a collection will get out of range exception which will be same affect as the validation.
         /// </remarks>
+        #if !NET35  
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        #endif
         public int GetOffset(int length)
         {
             int offset = _value;

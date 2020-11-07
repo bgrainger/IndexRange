@@ -132,8 +132,10 @@ namespace System.Tests
 
             public int[] Data => _data;
 
-            public bool Equals(CustomRangeTester other)
+            public bool Equals(CustomRangeTester? other)
             {
+                if( other == null ) return false;
+
                 if (_data.Length == other.Data.Length)
                 {
                     for (int i = 0; i < _data.Length; i++)
