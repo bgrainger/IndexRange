@@ -11,7 +11,7 @@
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
-    <Copyright>Copyright 2019 Bradley Grainger</Copyright>
+    <Copyright>Copyright 2019–2020 Bradley Grainger</Copyright>
     <Authors>Bradley Grainger</Authors>
     <PackageTags>Index;System.Index;Range;System.Range;C#8</PackageTags>
     <PackageProjectUrl>https://github.com/bgrainger/IndexRange</PackageProjectUrl>
@@ -30,7 +30,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)'=='net35'">
@@ -46,8 +46,8 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0"/>
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net471' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2" Condition=" '$(OS)' != 'Windows_NT' "/>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net47' ">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" Condition=" '$(OS)' != 'Windows_NT' "/>
   </ItemGroup>
 
 </Project>
