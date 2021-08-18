@@ -2,13 +2,19 @@ steps:
 - task: UseDotNet@2
   displayName: 'Install .NET Core 2.0 Runtime'
   inputs:
-    version: '2.1.13'
+    version: '2.1.x'
     packageType: 'runtime'
 
 - task: UseDotNet@2
-  displayName: 'Install .NET Core 3.0 SDK'
+  displayName: 'Install .NET Core 3.0 Runtime'
   inputs:
-    version: '3.0.100'
+    version: '3.0.x'
+    packageType: 'runtime'
+
+- task: UseDotNet@2
+  displayName: 'Install .NET 5.0 SDK'
+  inputs:
+    version: '5.0.x'
 
 - task: DotNetCoreCLI@2
   displayName: 'Restore packages'
