@@ -33,19 +33,20 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
-    <PackageReference Include="ValueTupleBridge" Version="0.1.5" />
-  </ItemGroup>
-
   <ItemGroup>
     <None Include="..\..\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
+    <PackageReference Include="ValueTupleBridge" Version="0.1.5" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2"/>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <PackageReference Include="System.ValueTuple" Version="4.5.0"/>
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net47' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net47' ">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" Condition=" '$(OS)' != 'Windows_NT' "/>
   </ItemGroup>
 
