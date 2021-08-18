@@ -1,13 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <TargetFrameworks>net45;net47;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net35;net45;net47;netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>8.0</LangVersion>
     <Nullable>Enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <SignAssembly>true</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <SignAssembly Condition=" '$(TargetFramework)' != 'net35' ">true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' and '$(TargetFramework)' != 'net35' ">true</PublicSign>
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
@@ -37,12 +37,17 @@
     <None Include="..\..\icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
+    <PackageReference Include="ValueTupleBridge" Version="0.1.5" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2"/>
+  </ItemGroup>
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <PackageReference Include="System.ValueTuple" Version="4.5.0"/>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'net47' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" Condition=" '$(OS)' != 'Windows_NT' "/>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" Condition=" '$(OS)' != 'Windows_NT' "/>
   </ItemGroup>
 
 </Project>
