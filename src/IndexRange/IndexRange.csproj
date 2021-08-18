@@ -16,10 +16,13 @@
     <Authors>Bradley Grainger</Authors>
     <PackageTags>Index;System.Index;Range;System.Range;C#8</PackageTags>
     <PackageProjectUrl>https://github.com/bgrainger/IndexRange</PackageProjectUrl>
-    <PackageReleaseNotes>https://github.com/bgrainger/IndexRange/blob/master/VersionHistory.md</PackageReleaseNotes>
+    <PackageReleaseNotes>* Add support for .NET Framework 3.5.
+* Produce a deterministic build.
+* Embed symbols in the NuGet package.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://raw.githubusercontent.com/bgrainger/IndexRange/master/icon.png</PackageIconUrl>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>Package.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bgrainger/IndexRange.git</RepositoryUrl>
     <DebugType>embedded</DebugType>
@@ -35,6 +38,7 @@
 
   <ItemGroup>
     <None Include="..\..\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="..\..\Package.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
