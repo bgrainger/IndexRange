@@ -6,8 +6,8 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>Enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <SignAssembly>true</SignAssembly>
-    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <SignAssembly Condition=" '$(TargetFramework)' != 'net35' ">true</SignAssembly>
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' and '$(TargetFramework)' != 'net35' ">true</PublicSign>
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
@@ -33,7 +33,7 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='net35'">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
     <PackageReference Include="ValueTupleBridge" Version="0.1.5" />
   </ItemGroup>
 
