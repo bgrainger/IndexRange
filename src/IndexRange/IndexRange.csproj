@@ -12,7 +12,7 @@
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
-    <Copyright>Copyright 2019–2021 Bradley Grainger</Copyright>
+    <Copyright>Copyright 2019–2022 Bradley Grainger</Copyright>
     <Authors>Bradley Grainger</Authors>
     <PackageTags>Index;System.Index;Range;System.Range;C#8</PackageTags>
     <PackageProjectUrl>https://github.com/bgrainger/IndexRange</PackageProjectUrl>
