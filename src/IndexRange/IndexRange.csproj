@@ -4,7 +4,7 @@
     <VersionPrefix>1.0.1-beta.1</VersionPrefix>
     <TargetFrameworks>net35;net45;net47;netstandard2.0;netstandard2.1</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <Nullable>Enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly Condition=" '$(TargetFramework)' != 'net35' ">true</SignAssembly>
@@ -26,7 +26,6 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/bgrainger/IndexRange.git</RepositoryUrl>
     <DebugType>embedded</DebugType>
-    <LangVersion>8.0</LangVersion>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <ContinuousIntegrationBuild Condition=" '$(TF_BUILD)' == 'true' ">true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -34,6 +33,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+    <Using Include="System.Runtime.CompilerServices"/>
   </ItemGroup>
 
   <ItemGroup>

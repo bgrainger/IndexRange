@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net47;net48;netcoreapp2.1;netcoreapp3.0</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>Enable</Nullable>
   </PropertyGroup>
@@ -17,6 +17,8 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    <Using Include="System" />
+    <Using Include="Xunit" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net48' ">
