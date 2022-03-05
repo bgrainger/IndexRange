@@ -1,6 +1,6 @@
 steps:
 - task: UseDotNet@2
-  displayName: 'Install .NET Core 2.0 Runtime'
+  displayName: 'Install .NET Core 2.1 Runtime'
   inputs:
     version: '2.1.x'
     packageType: 'runtime'
@@ -28,11 +28,11 @@ steps:
     arguments: '-c Release'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Test netcoreapp2.0'
+  displayName: 'Test netcoreapp2.1'
   inputs:
     command: 'test'
-    arguments: '-c Release -f netcoreapp2.0'
-    testRunTitle: 'netcoreapp2.0'
+    arguments: '-c Release -f netcoreapp2.1'
+    testRunTitle: 'netcoreapp2.1'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test netcoreapp3.0 (Baseline)'
