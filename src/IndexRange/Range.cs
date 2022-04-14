@@ -72,9 +72,10 @@ public readonly struct Range : IEquatable<Range>
     /// It is expected Range will be used with collections which always have non negative length/count.
     /// We validate the range is inside the length scope though.
     /// </remarks>
-    #if !NET35  
+#if !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    #endif
+#endif
+    [CLSCompliant(false)]
     public (int Offset, int Length) GetOffsetAndLength(int length)
     {
         int start;

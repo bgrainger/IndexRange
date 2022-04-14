@@ -1,5 +1,9 @@
 # Version History
 
+### 1.0.2
+
+* Mark assembly as CLS compliant.
+
 ### 1.0.1
 
 * Add support for .NET Framework 3.5.
