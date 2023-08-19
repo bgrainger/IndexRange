@@ -56,7 +56,7 @@ steps:
   inputs:
     solution: IndexRange.sln
     configuration: Release
-    msbuildArgs: '/t:Pack'
+    msbuildArgs: '/t:Pack /p:PackageOutputPath=$(Build.ArtifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   displayName: 'Publish NuGet packages'
