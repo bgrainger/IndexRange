@@ -51,11 +51,12 @@ steps:
     arguments: '-c Release -f net48'
     testRunTitle: 'net48'
 
-- task: DotNetCoreCLI@2
+- task: VSBuild@1
   displayName: 'Pack'
   inputs:
-    command: 'pack'
-    arguments: '-c Release --no-build'
+    solution: IndexRange.sln
+    configuration: Release
+    msbuildArgs: '/t:Pack'
 
 - task: PublishPipelineArtifact@1
   displayName: 'Publish NuGet packages'
