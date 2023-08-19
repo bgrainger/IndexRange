@@ -10,20 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net48' or '$(TargetFramework)' == 'netcoreapp2.1'  ">
-    <PackageReference Include="System.Memory" Version="4.5.4" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\IndexRange\IndexRange.csproj" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.3" />
+    <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
     <Using Include="System" />
     <Using Include="Xunit" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net47' or '$(TargetFramework)' == 'net48' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" Condition=" '$(OS)' != 'Windows_NT' "/>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" Condition=" '$(OS)' != 'Windows_NT' "/>
   </ItemGroup>
 
 </Project>
