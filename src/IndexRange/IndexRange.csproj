@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
     <VersionPrefix>1.0.2</VersionPrefix>
-    <TargetFrameworks>net35;net45;net47;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net35;net45;net47;netstandard2.0;netstandard2.1;uap10.0</TargetFrameworks>
+    <TargetPlatformMinVersion Condition=" '$(TargetFramework)' == 'uap10.0' ">10.0.10240.0</TargetPlatformMinVersion>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <LangVersion>10.0</LangVersion>
     <Nullable>Enable</Nullable>
@@ -50,7 +50,7 @@
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" PrivateAssets="all" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'uap10.0' ">
     <PackageReference Include="System.ValueTuple" Version="4.5.0"/>
   </ItemGroup>
 
