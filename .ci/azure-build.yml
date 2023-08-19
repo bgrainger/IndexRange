@@ -22,12 +22,6 @@ steps:
     command: 'restore'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build'
-  inputs:
-    command: 'build'
-    arguments: '-c Release'
-
-- task: DotNetCoreCLI@2
   displayName: 'Test netcoreapp2.1'
   inputs:
     command: 'test'
