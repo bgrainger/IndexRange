@@ -78,19 +78,8 @@ public readonly struct Range : IEquatable<Range>
     [CLSCompliant(false)]
     public (int Offset, int Length) GetOffsetAndLength(int length)
     {
-        int start;
-        Index startIndex = Start;
-        if (startIndex.IsFromEnd)
-            start = length - startIndex.Value;
-        else
-            start = startIndex.Value;
-
-        int end;
-        Index endIndex = End;
-        if (endIndex.IsFromEnd)
-            end = length - endIndex.Value;
-        else
-            end = endIndex.Value;
+        int start = Start.GetOffset(length);
+        int end = End.GetOffset(length);
 
         if ((uint)end > (uint)length || (uint)start > (uint)end)
         {
