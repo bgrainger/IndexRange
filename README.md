@@ -1,5 +1,7 @@
 # IndexRange
 
+[![Project Status: Unsupported – The project has reached a stable, usable state but the author has ceased all work on it.](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
+
 This repository provides implementations (copied [from corefx](https://github.com/dotnet/corefx/tree/d152d19f0be3dcea1a32f452e9d9940e990574d7/src/Common/src/CoreLib/System))
 of `System.Index` and `System.Range` for `netstandard2.0` and .NET Framework.
 
@@ -12,7 +14,7 @@ This library is not necessary nor recommended when targeting versions of .NET th
 
 ## Installing
 
-[![NuGet Pre Release](https://img.shields.io/nuget/v/IndexRange.svg)](https://www.nuget.org/packages/IndexRange/)
+[![NuGet](https://img.shields.io/nuget/v/IndexRange.svg)](https://www.nuget.org/packages/IndexRange/)
 
 The package is available [on NuGet](https://www.nuget.org/packages/IndexRange). To install, run:
 
