@@ -7,6 +7,7 @@
     <LangVersion>10.0</LangVersion>
     <Nullable>Enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);CS0436</NoWarn>
     <SignAssembly Condition=" '$(TargetFramework)' != 'net35' ">true</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' and '$(TargetFramework)' != 'net35' ">true</PublicSign>
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
