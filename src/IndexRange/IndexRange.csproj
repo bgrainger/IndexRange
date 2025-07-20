@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <VersionPrefix>1.0.3</VersionPrefix>
-    <TargetFrameworks>net35;net45;net47;netstandard2.0;netstandard2.1;uap10.0</TargetFrameworks>
+    <VersionPrefix>1.1.0</VersionPrefix>
+    <TargetFrameworks>net35;net45;net462;net47;netstandard2.0;netstandard2.1;uap10.0</TargetFrameworks>
     <TargetPlatformMinVersion Condition=" '$(TargetFramework)' == 'uap10.0' ">10.0.10240.0</TargetPlatformMinVersion>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <LangVersion>10.0</LangVersion>
@@ -13,12 +13,11 @@
     <AssemblyOriginatorKeyFile>..\..\IndexRange.snk</AssemblyOriginatorKeyFile>
     <Title>System.Index and System.Range</Title>
     <Description>Implementations of System.Index and System.Range for netstandard2.0 and .NET Framework.</Description>
-    <Copyright>Copyright 2019–2023 Bradley Grainger</Copyright>
+    <Copyright>Copyright 2019–2025 Bradley Grainger</Copyright>
     <Authors>Bradley Grainger</Authors>
     <PackageTags>Index;System.Index;Range;System.Range;C#8</PackageTags>
     <PackageProjectUrl>https://github.com/bgrainger/IndexRange</PackageProjectUrl>
-    <PackageReleaseNotes>* Support uap10.0 target framework.
-* Use optimized Index.GetOffset in Range.GetOffsetAndLength.</PackageReleaseNotes>
+    <PackageReleaseNotes>* Type-forward implementations to Microsoft.Bcl.Memory for netstandard2.0, net462, and higher.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://raw.githubusercontent.com/bgrainger/IndexRange/master/icon.png</PackageIconUrl>
     <PackageIcon>icon.png</PackageIcon>
@@ -38,13 +37,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
-    <Using Include="System.Runtime.CompilerServices"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <Using Include="System.Runtime.CompilerServices" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\icon.png" Pack="true" PackagePath="\"/>
-    <None Include="..\..\Package.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\Package.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
@@ -52,7 +51,11 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' or '$(TargetFramework)' == 'uap10.0' ">
-    <PackageReference Include="System.ValueTuple" Version="4.5.0"/>
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' or '$(TargetFramework)' == 'net462' or '$(TargetFramework)' == 'net47' ">
+    <PackageReference Include="Microsoft.Bcl.Memory" Version="9.0.0" />
   </ItemGroup>
 
 </Project>

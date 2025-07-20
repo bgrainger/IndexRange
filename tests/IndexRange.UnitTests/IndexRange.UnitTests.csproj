@@ -4,6 +4,7 @@
     <TargetFrameworks>net47;net48;netcoreapp2.1;netcoreapp3.0</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <LangVersion>10.0</LangVersion>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>$(NoWarn);NU1902;NU1903</NoWarn>
     <Nullable>Enable</Nullable>

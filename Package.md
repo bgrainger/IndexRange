@@ -1,4 +1,10 @@
-This package lets you use the C# 8.0 [index and range features](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#indices-and-ranges) in projects that target .NET Framework or `netstandard2.0`.
+## About
+
+This package lets you use the C# 8.0 [index and range features](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#indices-and-ranges) in projects that target .NET Framework.
+
+For projects that target `netstandard2.0` or .NET Framework 4.6.2 or later, use the [Microsoft.Bcl.Memory](https://www.nuget.org/packages/Microsoft.Bcl.Memory/) package instead. This package should be considered deprecated for those target frameworks.
+
+This library is not necessary nor recommended when targeting versions of .NET that include the relevant support.
 
 ## Using Range with Arrays
 
