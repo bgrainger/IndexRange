@@ -1,5 +1,8 @@
 # Version History
 
+### 1.1.1
+* Update `Microsoft.Bcl.Memory` to `9.0.14` to address [vulnerability](https://github.com/advisories/GHSA-73j8-2gch-69rq)
+
 ### 1.0.2
 
 * Mark assembly as CLS compliant.
