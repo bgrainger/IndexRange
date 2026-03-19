@@ -1,7 +1,17 @@
 # Version History
 
 ### 1.1.1
-* Update `Microsoft.Bcl.Memory` to `9.0.14` to address [vulnerability](https://github.com/advisories/GHSA-73j8-2gch-69rq)
+
+* Update Microsoft.Bcl.Memory to 9.0.14 to address [CVE-2026-26127](https://github.com/advisories/GHSA-73j8-2gch-69rq).
+
+### 1.1.0
+
+* Type-forward implementations to Microsoft.Bcl.Memory for `netstandard2.0`, `net462`, and higher.
+
+### 1.0.3
+
+* Support `uap10.0` target framework.
+* Use optimized `Index.GetOffset` in `Range.GetOffsetAndLength`.
 
 ### 1.0.2
 
